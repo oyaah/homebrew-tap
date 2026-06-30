@@ -5,7 +5,8 @@ class Quickie < Formula
   url "https://github.com/oyaah/quickie.git", using: :git, tag: "v0.1.0", revision: "dabee3bea98b4855b4523c019a63b3d29725fb26"
   license "MIT"
 
-  depends_on cask: "hammerspoon"
+  # Hammerspoon (a cask) is installed by `quickie setup` if missing — formulae
+  # cannot declare a cask dependency directly.
 
   def install
     libexec.install Dir["*"]
